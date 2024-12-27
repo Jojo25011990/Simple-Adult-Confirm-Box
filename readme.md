@@ -4,7 +4,7 @@
 
 # Screenshot
 
-![](./Screenshot-autotext-glowing-glassmorph.png)
+![](./Screenshot%20Adult%20Confirm%20Box.png)
 
 # Build with
 
