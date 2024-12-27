@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+input,
+button,
+textarea {
+  background-color: #fff;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 960px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/sexy-2335873_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  position: relative;
+  width: 100rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 1;
+  color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+}
+.container__heading {
+  font-size: 7rem;
+  font-weight: bold;
+  letter-spacing: -0.3rem;
+  text-shadow: -0.1rem -0.1rem 0 #222;
+  word-break: break-all;
+}
+@media (max-width: 435px) {
+  .container__heading {
+    text-align: center;
+    font-size: 5.5rem;
+    word-break: normal;
+  }
+}
+.container__text {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: -0.1rem -0.1rem 0 #222;
+  margin-bottom: 5rem;
+}
+.container__link {
+  font-size: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  color: inherit;
+  padding: 1.5rem 3rem;
+  text-transform: uppercase;
+  background-color: #d62828;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+  animation: seduce 2s infinite;
+}
+.container__link:hover {
+  animation: none;
+}
+
+@keyframes seduce {
+  0%, 100% {
+    background-color: #d62828;
+  }
+  25% {
+    background-color: #ff6b6b;
+  }
+  50% {
+    background-color: #e63946;
+  }
+  75% {
+    background-color: #b22222;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm__box {
+  width: 18rem;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: #2c2c2c;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.confirm__box-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+.confirm__box-btn .confirm__box-yes, .confirm__box-btn .confirm__box-no {
+  color: #f1f1f1;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.confirm__box-btn .confirm__box-yes {
+  background-color: #57cc99;
+  transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+}
+.confirm__box-btn .confirm__box-yes:hover, .confirm__box-btn .confirm__box-yes:active {
+  box-shadow: 0 0 0.5rem #57cc99;
+  text-shadow: 0 0 0.2rem #f1f1f1;
+}
+.confirm__box-btn .confirm__box-no {
+  background-color: #e63946;
+  transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+}
+.confirm__box-btn .confirm__box-no:hover, .confirm__box-btn .confirm__box-no:active {
+  box-shadow: 0 0 0.5rem #e63946;
+  text-shadow: 0 0 0.2rem #f1f1f1;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.textYesMessage {
+  position: absolute;
+  bottom: -15rem;
+  font-size: 2rem;
+  font-weight: bold;
+}

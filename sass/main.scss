@@ -1,0 +1,196 @@
+@import "./reset";
+
+html {
+	@media (max-width: 960px) {
+		font-size: 50%;
+	}
+}
+
+body {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: {
+		image: url("../img/sexy-2335873_1920.jpg");
+		size: cover;
+		repeat: no-repeat;
+		position: center;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
+
+.container {
+	position: relative;
+	width: 100rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+	z-index: 1;
+
+	color: #f1f1f1;
+
+	font-family: "Open Sans", sans-serif;
+
+	&__heading {
+		font: {
+			size: 7rem;
+			weight: bold;
+		}
+
+		letter-spacing: -0.3rem;
+		text-shadow: -0.1rem -0.1rem 0 #222;
+		word-break: break-all;
+
+		@media (max-width: 435px) {
+			text-align: center;
+			font-size: 5.5rem;
+			word-break: normal;
+		}
+	}
+
+	&__text {
+		font: {
+			size: 3rem;
+			style: italic;
+			weight: 400;
+		}
+		text-align: center;
+
+		text-shadow: -0.1rem -0.1rem 0 #222;
+		margin-bottom: 5rem;
+	}
+
+	&__link {
+		font: {
+			size: 2rem;
+			weight: 500;
+		}
+
+		display: inline-block;
+		color: inherit;
+
+		padding: 1.5rem 3rem;
+		text-transform: uppercase;
+
+		background-color: #d62828;
+		border-radius: 0.5rem;
+		transition: background-color 0.2s ease;
+		animation: seduce 2s infinite;
+
+		&:hover {
+			animation: none;
+		}
+	}
+}
+
+@keyframes seduce {
+	0%,
+	100% {
+		background-color: #d62828;
+	}
+	25% {
+		background-color: #ff6b6b;
+	}
+	50% {
+		background-color: #e63946;
+	}
+	75% {
+		background-color: #b22222;
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.8);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.confirm__box {
+	width: 18rem;
+	font: {
+		size: 3rem;
+		weight: bold;
+		family: "Open Sans", sans-serif;
+	}
+
+	color: #2c2c2c;
+	background-color: #f1f1f1;
+	text-align: center;
+	padding: 2rem;
+	border-radius: 0.5rem;
+}
+
+.confirm__box-btn {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 2rem;
+
+	& .confirm__box-yes,
+	& .confirm__box-no {
+		color: #f1f1f1;
+
+		border-radius: 0.5rem;
+
+		padding: 1rem 2rem;
+		font-size: 2rem;
+		cursor: pointer;
+	}
+
+	& .confirm__box-yes {
+		background-color: #57cc99;
+		transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+
+		&:hover,
+		&:active {
+			box-shadow: 0 0 0.5rem #57cc99;
+			text-shadow: 0 0 0.2rem #f1f1f1;
+		}
+	}
+
+	& .confirm__box-no {
+		background-color: #e63946;
+		transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+
+		&:hover,
+		&:active {
+			box-shadow: 0 0 0.5rem #e63946;
+			text-shadow: 0 0 0.2rem #f1f1f1;
+		}
+	}
+}
+
+// *** JavaScript Classes ***
+.overlay.hidden {
+	display: none;
+}
+
+.textYesMessage {
+	position: absolute;
+	bottom: -15rem;
+
+	font-size: 2rem;
+	font-weight: bold;
+}
