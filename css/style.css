@@ -121,7 +121,7 @@ body::before {
   text-shadow: -0.1rem -0.1rem 0 #222;
   word-break: break-all;
 }
-@media (max-width: 435px) {
+@media (max-width: 510px) {
   .container__heading {
     text-align: center;
     font-size: 5.5rem;
